@@ -1,0 +1,42 @@
+public class Main {
+    public static void main(String[] args) {
+        Car carOne = new Car("Honda", "NSX Type R", "White", 1992, "3.0 L V6", 270, 2712, 2, 69000);
+        Car carTwo = new Car("Toyota", "GR86", "Red", 2023, "2.4 L F4", 228, 2811, 2, 28400);
+        Car carThree = new Car("Honda", "Accord", "Black", 2002, "2.3 L I4", 150, 2943, 5, 20850 );
+        Car carFour = new Car("Toyota", "Camry", "Silver", 2021, "2.5 L I4", 202, 3310, 5, 25045);
+
+        System.out.println(Car.carCount());
+
+        System.out.println();
+
+        System.out.println(carOne.getBasicInfo());
+        System.out.println(carOne.getSpecificInfo());
+        System.out.println(carOne.toString());
+        System.out.println(carOne.isSportsCar());
+
+        System.out.println();
+
+        System.out.println(carTwo.getBasicInfo());
+        System.out.println(carTwo.getSpecificInfo());
+        System.out.println(carTwo.toString());
+        System.out.println(carTwo.isSportsCar());
+
+        System.out.println();
+
+        System.out.println(carThree.getBasicInfo());
+        System.out.println(carThree.getSpecificInfo());
+        System.out.println(carThree.toString());
+        System.out.println(carThree.isSportsCar());
+
+        System.out.println();
+
+        System.out.println(carFour.getBasicInfo());
+        System.out.println(carFour.getSpecificInfo());
+        System.out.println(carFour.toString());
+        System.out.println(carFour.isSportsCar());
+
+        System.out.println();
+
+        System.out.println(Car.findLightest(carOne, carTwo, carThree, carFour));
+    }
+}

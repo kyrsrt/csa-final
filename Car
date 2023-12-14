@@ -1,0 +1,197 @@
+public class Car {
+    //declaring instatiation variables
+    static int cars = 0;
+    private String brand;
+    private String model;
+    private String color;
+    private int year;
+    private String engineType;
+    private int horsepower;
+    private int weight;
+    private int seatNumber;
+    private int price;
+    //end of declaring instantiation variables
+
+
+    //start of constructors
+    public Car()
+    {
+        brand = "";
+        model = "";
+        color = "";
+        year = 0;
+        engineType = "";
+        horsepower = 0;
+        weight = 0;
+        seatNumber = 0;
+        price = 0;
+    }
+
+
+    public Car(String brand, String model, String color, int year, String engineType, int horsepower, int weight, int seatNumber, int price)
+    {
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+        this.year = year;
+        this.engineType = engineType;
+        this.horsepower = horsepower;
+        this.weight = weight;
+        this.seatNumber = seatNumber;
+        this.price = price;
+        cars++;
+    }
+    //end of constructors
+
+
+    //start of getters
+    public String getBrand()
+    {
+        return brand;
+    }
+    public String getModel()
+    {
+        return model;
+    }
+
+
+    public String getColor()
+    {
+        return color;
+    }
+
+
+    public int getYear()
+    {
+        return year;
+    }
+
+
+    public String getEngineType()
+    {
+        return engineType;
+    }
+
+
+    public int getHorsepower()
+    {
+        return horsepower;
+    }
+
+
+    public int getWeight()
+    {
+        return weight;
+    }
+
+
+    public int getSeatNumber()
+    {
+        return seatNumber;
+    }
+
+
+    public int getPrice()
+    {
+        return price;
+    }
+
+
+    public static String carCount()
+    {
+        return "There are " + cars + " cars.";
+    }
+
+
+    public String getBasicInfo() //lists the basic info of a car
+    {
+        return "The basic information of the car is that it is a " + color + " " + year + " " + brand + " " + model + ", it costs $" + price + " MSRP.";
+    }
+
+
+    public String getSpecificInfo() //lists more specific info of a car
+    {
+        return "The specific information of the " + brand + " " + model + " is that it comes with a " + engineType + " that produces " + horsepower + " horsepower. It weighs " + weight + " pounds and has " + seatNumber + " seats." + " It costs $" + price + " MSRP.";
+    }
+
+
+    public String toString()
+    {
+        return "The information of the car is that it is a " + color + " " + year + " " + brand + " " + model + " it comes with a " + engineType + " that produces " + horsepower + " horsepower. It weighs " + weight + " pounds and has " + seatNumber + " seats." + " It costs $" + price + " MSRP.";
+    }
+    //end of getters
+
+    //start of methods
+    public static String findLightest(Car carOne, Car carTwo, Car carThree, Car carFour)
+    {
+        int count = 0;
+        int label = 0; // temporary variable to track which car is lightest
+        while(count < cars)
+        {
+            if((carOne.getWeight() < carTwo.getWeight()) && (carOne.getWeight() < carThree.getWeight()) && (carOne.getWeight() < carFour.getWeight()))
+            {
+                label = 1;
+                count = cars;
+            }
+            else if(carTwo.getWeight() < carThree.getWeight() && carTwo.getWeight() < carFour.getWeight())
+            {
+                label = 2;
+                count = cars;
+            }
+            else if(carThree.getWeight() < carFour.getWeight())
+            {
+                label = 3;
+                count = cars;
+            }
+            else
+            {
+                label = 4;
+                count = cars;
+            }
+
+
+        }
+        if(label == 1)
+        {
+            return "The lightest car is the " + carOne.getModel() + " which weighs " + carOne.getWeight() + " pounds.";
+        }
+        else if(label == 2)
+        {
+            return "The lightest car is the " + carTwo.getModel() + " which weighs " + carTwo.getWeight() + " pounds.";
+        }
+        else if(label == 3)
+        {
+            return "The lightest car is the " + carThree.getModel() + " which weighs " + carThree.getWeight() + " pounds.";
+        }
+        else
+        {
+            return "The lightest car is the " + carFour.getModel() + " which weighs " + carFour.getWeight() + " pounds.";
+        }
+    }
+
+    public String isSportsCar()
+    {
+        boolean isSportsCar = false;
+        if(horsepower >= 200 || seatNumber < 3)
+        {
+            isSportsCar = true;
+        }
+        else
+        {
+            isSportsCar = false;
+        }
+
+        if(isSportsCar == true)
+        {
+            return "The " + getBrand() + " " + getModel().concat(" is a sports car.");
+        }
+        else
+        {
+            return "The " + getBrand() + " " + getModel().concat(" is not a sports car.");
+        }
+    }
+}
+
+
+
+
